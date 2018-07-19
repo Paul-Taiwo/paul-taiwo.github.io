@@ -113,6 +113,15 @@
 	background: #C49B66;
 	position: absolute;
 	bottom: 0;
+	left: 40%;
+}
+.title-left:after {
+	content: "";
+	width: 25%;
+	height: 1px;
+	background: #C49B66;
+	position: absolute;
+	bottom: 0;
 	left: 0;
 }
 
