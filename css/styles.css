@@ -14,6 +14,10 @@
 	font-family: 'Quicksand', sans-serif;
 }
 
+body {
+	position: relative;
+}
+
 .section {
 	margin-top: 5%; 
 }
