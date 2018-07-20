@@ -22,7 +22,7 @@
   <![endif]-->
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="100">
 
 	<!-- Navigation -->
 	<nav class="myNav navbar navbar-static-top">
@@ -35,9 +35,9 @@
 			</div>
 			<div class="collapse navbar-collapse laspe"  id="myNavBar" >
 			<ul class="nav navbar-nav navbar-right nav-list" id="navLinks">
-				<li><a class="nav-link active" href="">Home</a></li>
-				<li><a class="nav-link" href="#">About</a></li>
-				<li><a class="nav-link" href="">Services</a></li>
+				<li><a class="nav-link" href="#home">Home</a></li>
+				<li><a class="nav-link" href="#about">About</a></li>
+				<li><a class="nav-link" href="#services">Services</a></li>
 				<li><a class="nav-link" href="">Portfolio</a></li>
 				<li><a class="nav-link" href="">Testimonials</a></li>
 				<li><a class="nav-link" href="">Contact</a></li>
@@ -48,7 +48,7 @@
 	<!-- End Navigation -->
 
 	<!-- Home -->
-	<section class="hero">
+	<section id="home" class="hero">
 		<div class="hero-text">
 			<h1>Hello & Welcome</h1>
 			<h3>I am <span>Paul Taiwo</span></h3>
@@ -58,7 +58,7 @@
 	<!-- End Home -->
 
 	<!-- About -->
-	<section class="section">
+	<section id="about" class="section">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-5">
@@ -168,10 +168,14 @@
 	<!-- End About -->
 
 	<!-- Services -->
-	<div class="section service">
-		<div class="title">
-			<h2>My Services</h2>
+	<div id="services" class="section service">
+
+		<div class="text-center" style="margin: 0 aute 0">
+			<div class="title">
+				<h2>My Services</h2>
+			</div>
 		</div>
+		
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 col-md-4">
@@ -195,9 +199,7 @@
 						<p>fusce quis volutpat porta, ut tincidunt eros est nec diam erat quis volutpat porta, neque massa, ut tincidunt eros est nec diam</p>
 					</div>
 				</div>
-			</div>
-
-			<div class="row">
+				<!--<div class="row"> -->
 				<div class="col-sm-6 col-md-4">
 					<div class="item text-center">
 						<span class="icon-shield"></span><br>
