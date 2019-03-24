@@ -8,16 +8,17 @@ $white: #ffffff;
   -moz-box-sizing: border-box;
 }
 
-@mixin alignCenter {
-  text-align: center;
-  text-align: -webkit-center;
-  text-align: -moz-center;
-}
 
 * {
   margin: 0;
   padding: 0;
   @include boxSizing();
+}
+
+.t-center {
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
 }
 
 html,
@@ -31,7 +32,8 @@ body {
   border-radius: 5px;
   margin: 0.3em 0.7em;
   box-shadow: 2px 3px 10px #333333;
-  min-height: 93.5vh;
+  min-height: 94vh;
+  color: $white;
 }
 
 .particles {
@@ -57,7 +59,6 @@ nav.navig {
 
   .title {
     float: left;
-    color: $white;
     font-family: 'Lobster Two', cursive;
     font-weight: 600;
   }
@@ -71,7 +72,6 @@ nav.navig {
 
       a {
         margin: 0 20px;
-        color: $white;
         text-decoration: none;
         transition: 0.4s ease;
       }
@@ -85,11 +85,9 @@ nav.navig {
 
 .intro {
   display: flex;
-  color: $white;
   margin: 54px 0px;
 
   .img-contain {
-    @include alignCenter();
     margin: 0 auto;
     width: 35%;
 
@@ -110,13 +108,44 @@ nav.navig {
 
 .intro-text {
   font-family: 'Montserrat', sans-serif;
+
   h1 {
     margin: 0 0 12px;
   }
+
   p:first-child {
     font-size: 1em;
   }
+
   p:last-child {
     font-size: 1.2em;
   }
+}
+
+.works {
+  h1 {
+    margin: 0 0 24px;
+  }
+}
+
+.work-list {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+
+  .work {
+    background-color: $white;
+    padding: 18px;
+    border-radius: 4px;
+    flex-grow: 1;
+    margin: 0 10px 16px 0;
+    box-shadow: 3px 5px 10px #333333f7;
+    color: #333 !important;
+
+    p:nth-child(2) {
+      font-size: x-large;
+    }
+  }
+
 }

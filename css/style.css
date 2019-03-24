@@ -5,6 +5,11 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box; }
 
+.t-center {
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center; }
+
 html,
 body {
   scroll-behavior: smooth; }
@@ -15,7 +20,8 @@ body {
   border-radius: 5px;
   margin: 0.3em 0.7em;
   box-shadow: 2px 3px 10px #333333;
-  min-height: 93.5vh; }
+  min-height: 94vh;
+  color: #ffffff; }
 
 .particles {
   position: absolute;
@@ -35,7 +41,6 @@ nav.navig {
   height: 70px; }
   nav.navig .title {
     float: left;
-    color: #ffffff;
     font-family: 'Lobster Two', cursive;
     font-weight: 600; }
   nav.navig ul {
@@ -45,7 +50,6 @@ nav.navig {
       display: inline-flex; }
       nav.navig ul li a {
         margin: 0 20px;
-        color: #ffffff;
         text-decoration: none;
         transition: 0.4s ease; }
       nav.navig ul li a:hover {
@@ -53,12 +57,8 @@ nav.navig {
 
 .intro {
   display: flex;
-  color: #ffffff;
   margin: 54px 0px; }
   .intro .img-contain {
-    text-align: center;
-    text-align: -webkit-center;
-    text-align: -moz-center;
     margin: 0 auto;
     width: 35%; }
     .intro .img-contain img {
@@ -79,5 +79,24 @@ nav.navig {
     font-size: 1em; }
   .intro-text p:last-child {
     font-size: 1.2em; }
+
+.works h1 {
+  margin: 0 0 24px; }
+
+.work-list {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: wrap;
+  justify-content: flex-start; }
+  .work-list .work {
+    background-color: #ffffff;
+    padding: 18px;
+    border-radius: 4px;
+    flex-grow: 1;
+    margin: 0 10px 16px 0;
+    box-shadow: 3px 5px 10px #333333f7;
+    color: #333 !important; }
+    .work-list .work p:nth-child(2) {
+      font-size: x-large; }
 
 /*# sourceMappingURL=style.css.map */
