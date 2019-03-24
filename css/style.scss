@@ -2,17 +2,22 @@ $primary-color: red;
 $purple: purple;
 $white: #ffffff;
 
+@mixin boxSizing {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
 @mixin alignCenter {
   text-align: center;
   text-align: -webkit-center;
   text-align: -moz-center;
-  text-align: -o-center;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  @include boxSizing();
 }
 
 html,
@@ -20,25 +25,28 @@ body {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: rgb(81, 45, 168);
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius: 5px;
+  margin: 0.3em 0.7em;
+  box-shadow: 2px 3px 10px #333333;
+  min-height: 93.5vh;
+}
+
 .particles {
   position: absolute;
   display: block;
   top: 10%;
   right: 48px;
-  bottom: 17%;
+  bottom: 6%;
   // transform: translate(-50%, -50%);
   left: 5%;
   z-index: -2;
 }
 
-.container {
-  border-radius: 10px;
-  margin: 3em;
-}
-
 .content {
-  box-shadow: 2px 3px 10px #333333;
-  min-height: 500px;
+  margin: 0 11vw;
 }
 
 nav.navig {
@@ -50,6 +58,8 @@ nav.navig {
   .title {
     float: left;
     color: $white;
+    font-family: 'Lobster Two', cursive;
+    font-weight: 600;
   }
 
   ul {
@@ -76,6 +86,7 @@ nav.navig {
 .intro {
   display: flex;
   color: $white;
+  margin: 54px 0px;
 
   .img-contain {
     @include alignCenter();
@@ -93,5 +104,19 @@ nav.navig {
 
   .short-intro {
     width: 65%;
+    padding: 18px 0;
+  }
+}
+
+.intro-text {
+  font-family: 'Montserrat', sans-serif;
+  h1 {
+    margin: 0 0 12px;
+  }
+  p:first-child {
+    font-size: 1em;
+  }
+  p:last-child {
+    font-size: 1.2em;
   }
 }

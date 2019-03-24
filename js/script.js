@@ -1,5 +1,5 @@
 let body = document.querySelector('body');
-let colors = ['#ffeb3b', '#6a1b9a', '#3949ab']
+var colors = ['#6a1b9a', '#512da8', '#1565c0', '#ad1457', '#2e7d32'];
 // var cc = +(localStorage.previousBGColor || -1) + 1
 // cc = cc >= colors.length ? 0 : cc;
 // body.style.backgroundColor = colors[cc];
