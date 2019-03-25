@@ -1,0 +1,38 @@
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+);
+
+// Respond Above
+@mixin respond-above($breakpoint) {
+  $breakpoint-value: map-get($map: $breakpoints, $key: $breakpoint);
+
+  @media only screen {
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}
+
+//Respond Below
+@mixin respond-below($breakpoint) {
+  $breakpoint-value: map-get($map: $breakpoints, $key: $breakpoint);
+
+  @media only screen {
+    @media (max-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}
+
+// Respond Between
+@mixin respond-between($lower, $upper) {
+  $lower-breakpoint: map-get($map: $breakpoints, $key: $lower);
+  $upper-breakpoint: map-get($map: $breakpoints, $key: $upper);
+
+  @media (min-width: $lower-breakpoint) and (max-width: $upper-breakpoint) {
+    @content;
+  }
+}
