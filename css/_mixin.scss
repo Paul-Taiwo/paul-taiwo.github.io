@@ -1,7 +1,13 @@
-@mixin boxSizing {
+@mixin box-sizing {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+}
+
+.t-center {
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
 }
 
 @mixin display($value) {
@@ -85,4 +91,26 @@
 @mixin transition($values...) {
   -webkit-transition: $values;
   transition: $values;
+}
+
+@mixin button-bg($color) {
+  color: $white;
+  background-color: $color;
+  &:hover {
+    background-color: darken($color, 8%);
+  }
+  &:active {
+    background-color: darken($color, 25%);
+  }
+}
+
+@mixin clearfloat {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 }
