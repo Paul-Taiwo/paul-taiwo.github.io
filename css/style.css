@@ -62,6 +62,10 @@ nav.navig {
   nav.navig ul {
     float: right;
     list-style-type: none; }
+@media only screen and (max-width: 768px) {
+  nav.navig ul {
+    display: none; } }
+
     nav.navig ul li {
       display: -webkit-inline-box;
       display: -moz-inline-box;
