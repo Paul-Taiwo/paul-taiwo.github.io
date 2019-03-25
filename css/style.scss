@@ -8,6 +8,75 @@ $white: #ffffff;
   -moz-box-sizing: border-box;
 }
 
+@mixin display($value) {
+  @if $value == flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-#{$value};
+    display: -ms-flexbox;
+    display: $value;
+  }
+
+  @else if $value == inline-flex {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -webkit-#{$value};
+    display: -ms-#{$value}box;
+    display: $value;
+  }
+}
+
+@mixin  flex-wrap($value: nowrap) {
+  -webkit-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+}
+
+@mixin flex-grow($int: 1) {
+  -webkit-box-flex: $int;
+  -moz-box-flex: $int;
+  -webkit-flex-grow: $int;
+  -ms-flex: $int;
+  flex-grow: $int;
+}
+
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-box-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-box-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-box-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -moz-box-pack: $value;
+    -ms-box-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin transition($values...) {
+  -webkit-transition: $values;
+  transition: $values;
+}
 
 * {
   margin: 0;
@@ -27,11 +96,11 @@ body {
 }
 
 body {
+  @include box-shadow(2px 3px 10px #333333);
   background-color: rgb(81, 45, 168);
   font-family: 'Source Sans Pro', sans-serif;
   border-radius: 5px;
   margin: 0.3em 0.7em;
-  box-shadow: 2px 3px 10px #333333;
   min-height: 94vh;
   color: $white;
 }
@@ -47,20 +116,38 @@ body {
   z-index: -2;
 }
 
+.btn {
+  line-height: 34px;
+  display: block;
+  width: 170px;
+  border: none;
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+.btn-nonametogive {
+  @extend .btn;
+  background: red;
+}
+
 .content {
   margin: 0 11vw;
 }
 
 nav.navig {
-  // display: inline-flex;
   margin: 1.5em;
   padding: 15px 30px;
   height: 70px;
 
   .title {
     float: left;
-    font-family: 'Lobster Two', cursive;
-    font-weight: 600;
+
+    font: {
+      family: 'Lobster Two', cursive;
+      weight: 600;
+    }
   }
 
   ul {
@@ -68,23 +155,24 @@ nav.navig {
     list-style-type: none;
 
     li {
-      display: inline-flex;
+      @include display(inline-flex);
 
       a {
         margin: 0 20px;
         text-decoration: none;
-        transition: 0.4s ease;
-      }
+        @include transition(0.4s ease);
+        color: $white;
 
-      a:hover {
-        color: #fec758ff;
+        &:hover {
+          color: #fec758ff;
+        }
       }
     }
   }
 }
 
 .intro {
-  display: flex;
+  @include display(flex);
   margin: 54px 0px;
 
   .img-contain {
@@ -96,7 +184,7 @@ nav.navig {
       border: 3px solid $white;
       border-radius: 50%;
       height: auto;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.52);
+      @include box-shadow(0px 4px 8px rgba(0, 0, 0, 0.52));
     }
   }
 
@@ -129,19 +217,18 @@ nav.navig {
 }
 
 .work-list {
-  display: flex;
-  display: -webkit-flex;
-  flex-flow: wrap;
-  justify-content: flex-start;
+  @include display(flex);
+  @include justify-content();
+  @include flex-wrap(wrap);
 
   .work {
     background-color: $white;
     padding: 18px;
     border-radius: 4px;
-    flex-grow: 1;
     margin: 0 10px 16px 0;
-    box-shadow: 3px 5px 10px #333333f7;
     color: #333 !important;
+    @include flex-grow();
+    @include box-shadow(3px 5px 10px #333333f7);
 
     p:nth-child(2) {
       font-size: x-large;
