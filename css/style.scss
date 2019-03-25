@@ -9,7 +9,7 @@ $white: #ffffff;
 }
 
 @mixin display($value) {
-  @if $value == flex {
+  @if $value==flex {
     display: -webkit-box;
     display: -moz-box;
     display: -webkit-#{$value};
@@ -17,7 +17,7 @@ $white: #ffffff;
     display: $value;
   }
 
-  @else if $value == inline-flex {
+  @else if $value==inline-flex {
     display: -webkit-inline-box;
     display: -moz-inline-box;
     display: -webkit-#{$value};
@@ -26,13 +26,17 @@ $white: #ffffff;
   }
 }
 
-@mixin  flex-wrap($value: nowrap) {
+@mixin flex-wrap($value: nowrap) {
   -webkit-flex-wrap: $value;
-  @if $value == nowrap {
+
+  @if $value==nowrap {
     -ms-flex-wrap: none;
-  } @else {
+  }
+
+  @else {
     -ms-flex-wrap: $value;
   }
+
   flex-wrap: $value;
 }
 
@@ -45,25 +49,34 @@ $white: #ffffff;
 }
 
 @mixin justify-content($value: flex-start) {
-  @if $value == flex-start {
+  @if $value==flex-start {
     -webkit-box-pack: start;
     -moz-box-pack: start;
     -ms-box-pack: start;
-  } @else if $value == flex-end {
+  }
+
+  @else if $value==flex-end {
     -webkit-box-pack: end;
     -moz-box-pack: end;
     -ms-box-pack: end;
-  } @else if $value == space-between {
+  }
+
+  @else if $value==space-between {
     -webkit-box-pack: justify;
     -moz-box-pack: justify;
     -ms-box-pack: justify;
-  } @else if $value == space-around {
+  }
+
+  @else if $value==space-around {
     -ms-flex-pack: distribute;
-  } @else {
+  }
+
+  @else {
     -webkit-box-pack: $value;
     -moz-box-pack: $value;
     -ms-box-pack: $value;
   }
+
   -webkit-justify-content: $value;
   justify-content: $value;
 }
@@ -121,6 +134,7 @@ body {
   display: block;
   width: 170px;
   border: none;
+
   a {
     text-decoration: none;
     color: $white;
