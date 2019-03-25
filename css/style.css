@@ -1,14 +1,14 @@
+.t-center {
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center; }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box; }
-
-.t-center {
-  text-align: center;
-  text-align: -webkit-center;
-  text-align: -moz-center; }
 
 html,
 body {
@@ -33,17 +33,22 @@ body {
   left: 5%;
   z-index: 1; }
 
-.btn, .btn-nonametogive {
-  line-height: 34px;
-  display: block;
-  width: 170px;
-  border: none; }
-  .btn a, .btn-nonametogive a {
+.btn {
+  border: none;
+  padding: 10px; }
+  .btn a {
     text-decoration: none;
     color: #ffffff; }
 
 .btn-nonametogive {
-  background: red; }
+  color: #ffffff;
+  background-color: red;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+  .btn-nonametogive:hover {
+    background-color: #d60000; }
+  .btn-nonametogive:active {
+    background-color: maroon; }
 
 main {
   margin-bottom: 50px; }
@@ -80,6 +85,17 @@ nav.navig {
         color: #ffffff; }
         nav.navig ul li a:hover {
           color: #fec758ff; }
+  nav.navig button.btn {
+    display: none;
+    background: transparent; }
+@media only screen and (max-width: 768px) {
+  nav.navig button.btn {
+    display: block;
+    float: right; } }
+
+    nav.navig button.btn i.lnr {
+      font-size: x-large;
+      color: #ffffff; }
 
 .intro {
   display: -webkit-box;

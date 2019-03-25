@@ -8,13 +8,7 @@ $white: #ffffff;
 * {
   margin: 0;
   padding: 0;
-  @include boxSizing();
-}
-
-.t-center {
-  text-align: center;
-  text-align: -webkit-center;
-  text-align: -moz-center;
+  @include box-sizing();
 }
 
 html,
@@ -44,10 +38,8 @@ body {
 }
 
 .btn {
-  line-height: 34px;
-  display: block;
-  width: 170px;
   border: none;
+  padding: 10px;
 
   a {
     text-decoration: none;
@@ -56,8 +48,8 @@ body {
 }
 
 .btn-nonametogive {
-  @extend .btn;
-  background: red;
+  @include button-bg(red);
+  @include transition(all 0.4s ease);
 }
 
 main {
@@ -104,6 +96,21 @@ nav.navig {
       }
     }
   }
+
+  button.btn {
+    display: none;
+    background: transparent;
+    @include respond-below(sm) {
+      display: block;
+      float: right;
+    }
+
+    i.lnr {
+      font-size: x-large;
+      color: $white;
+    }
+  }
+
 }
 
 .intro {
