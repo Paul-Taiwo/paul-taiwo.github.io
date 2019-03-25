@@ -146,6 +146,10 @@ body {
   background: red;
 }
 
+main {
+  margin-bottom: 50px;
+}
+
 .content {
   margin: 0 11vw;
 }
@@ -225,6 +229,7 @@ nav.navig {
 }
 
 .works {
+  margin-bottom: 50px;
   h1 {
     margin: 0 0 24px;
   }
@@ -253,4 +258,12 @@ nav.navig {
 
 footer {
   margin: 0 11vw;
+  padding: 15px;
+
+  .social-icons {
+    margin-bottom: 10px;
+    a {
+      margin: 0 12px;
+    }
+  }
 }

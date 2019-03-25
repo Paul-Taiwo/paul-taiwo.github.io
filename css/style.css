@@ -45,6 +45,9 @@ body {
 .btn-nonametogive {
   background: red; }
 
+main {
+  margin-bottom: 50px; }
+
 .content {
   margin: 0 11vw; }
 
@@ -104,8 +107,10 @@ nav.navig {
   .intro-text p:last-child {
     font-size: 1.2em; }
 
-.works h1 {
-  margin: 0 0 24px; }
+.works {
+  margin-bottom: 50px; }
+  .works h1 {
+    margin: 0 0 24px; }
 
 .work-list {
   display: -webkit-box;
@@ -138,6 +143,11 @@ nav.navig {
       font-size: x-large; }
 
 footer {
-  margin: 0 11vw; }
+  margin: 0 11vw;
+  padding: 15px; }
+  footer .social-icons {
+    margin-bottom: 10px; }
+    footer .social-icons a {
+      margin: 0 12px; }
 
 /*# sourceMappingURL=style.css.map */
