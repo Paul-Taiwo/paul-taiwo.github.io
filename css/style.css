@@ -17,7 +17,7 @@ body {
 
 @media only screen and (max-width: 576px) {
   html {
-    font-size: 0.9em; } }
+    font-size: 0.8em; } }
 
 body {
   -webkit-box-shadow: 2px 3px 10px #333333;
@@ -173,10 +173,12 @@ nav.navig {
   .intro-text p:last-child {
     font-size: 1.2em; }
 
+.works h1,
+.contact h1 {
+  margin: 0 0 24px; }
+
 .works {
   margin-bottom: 50px; }
-  .works h1 {
-    margin: 0 0 24px; }
 
 .work-list {
   display: -webkit-box;
@@ -207,6 +209,12 @@ nav.navig {
     box-shadow: 3px 5px 10px #333333f7; }
     .work-list .work p:nth-child(2) {
       font-size: x-large; }
+@media only screen and (max-width: 576px) {
+  .work-list .work p:nth-child(2) {
+    font-size: large; } }
+
+.contact p {
+  font-size: large; }
 
 footer {
   margin: 0 11vw;

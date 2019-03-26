@@ -19,7 +19,7 @@ body {
 
 html {
   @include respond-below(xs) {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 }
 body {
@@ -207,11 +207,15 @@ nav.navig {
   }
 }
 
-.works {
-  margin-bottom: 50px;
+.works,
+.contact {
   h1 {
     margin: 0 0 24px;
   }
+}
+
+.works {
+  margin-bottom: 50px;
 }
 
 .work-list {
@@ -230,9 +234,18 @@ nav.navig {
 
     p:nth-child(2) {
       font-size: x-large;
+      @include respond-below(xs) {
+        font-size: large;
+      }
     }
   }
 
+}
+
+.contact {
+  p {
+    font-size: large;
+  }
 }
 
 footer {
