@@ -27,9 +27,13 @@ body {
   background-color: rgb(81, 45, 168);
   font-family: 'Source Sans Pro', sans-serif;
   border-radius: 5px;
-  margin: 0.3em 0.7em;
+  margin: 0 0.7em 1em;
   min-height: 94vh;
   color: $white;
+}
+
+a {
+  text-decoration: none;
 }
 
 .particles {
@@ -48,7 +52,6 @@ body {
   padding: 10px;
 
   a {
-    text-decoration: none;
     color: $white;
   }
 }
@@ -92,16 +95,29 @@ nav.navig {
   ul {
     float: right;
     list-style-type: none;
+
     @include respond-below(sm) {
-      display: none;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: -366px;
+      background: #333;
+      z-index: 5;
+      width: 70%;
+
+      @include respond-between(xs, md) {
+        width: 44%;
+      }
     }
 
     li {
       @include display(inline-flex);
+      @include respond-below(sm) {
+        display: block;
+      }
 
       a {
         margin: 0 20px;
-        text-decoration: none;
         @include transition(0.4s ease);
         color: $white;
 
@@ -148,7 +164,6 @@ nav.navig {
     list-style-type: none;
     li {
       a {
-        text-decoration: none;
         color: $white;
       }
     }
@@ -244,13 +259,16 @@ nav.navig {
 
 .contact {
   p {
-    font-size: large;
+    font-size: 1.35em;
   }
 }
 
 footer {
   margin: 0 11vw;
   padding: 15px;
+  @include respond-below(xs) {
+    margin: 0;
+  }
 
   .social-icons {
     margin-bottom: 10px;

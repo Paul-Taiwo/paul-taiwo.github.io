@@ -25,9 +25,12 @@ body {
   background-color: #512da8;
   font-family: 'Source Sans Pro', sans-serif;
   border-radius: 5px;
-  margin: 0.3em 0.7em;
+  margin: 0 0.7em 1em;
   min-height: 94vh;
   color: #ffffff; }
+
+a {
+  text-decoration: none; }
 
 .particles {
   position: absolute;
@@ -42,7 +45,6 @@ body {
   border: none;
   padding: 10px; }
   .btn a {
-    text-decoration: none;
     color: #ffffff; }
 
 .btn-nonametogive {
@@ -84,7 +86,17 @@ nav.navig {
     list-style-type: none; }
 @media only screen and (max-width: 768px) {
   nav.navig ul {
-    display: none; } }
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -366px;
+    background: #333;
+    z-index: 5;
+    width: 70%; } }
+
+  @media only screen and (max-width: 768px) and (min-width: 576px) and (max-width: 992px) {
+    nav.navig ul {
+      width: 44%; } }
 
     nav.navig ul li {
       display: -webkit-inline-box;
@@ -92,9 +104,12 @@ nav.navig {
       display: -webkit-inline-flex;
       display: -ms-inline-flexbox;
       display: inline-flex; }
+@media only screen and (max-width: 768px) {
+  nav.navig ul li {
+    display: block; } }
+
       nav.navig ul li a {
         margin: 0 20px;
-        text-decoration: none;
         -webkit-transition: 0.4s ease;
         transition: 0.4s ease;
         color: #ffffff; }
@@ -128,7 +143,6 @@ nav.navig {
   .side-nav ul {
     list-style-type: none; }
     .side-nav ul li a {
-      text-decoration: none;
       color: #ffffff; }
 
 .intro {
@@ -214,11 +228,15 @@ nav.navig {
     font-size: large; } }
 
 .contact p {
-  font-size: large; }
+  font-size: 1.35em; }
 
 footer {
   margin: 0 11vw;
   padding: 15px; }
+@media only screen and (max-width: 576px) {
+  footer {
+    margin: 0; } }
+
   footer .social-icons {
     margin-bottom: 10px; }
     footer .social-icons a {
