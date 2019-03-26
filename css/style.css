@@ -12,7 +12,12 @@
 
 html,
 body {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased; }
+
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: 0.9em; } }
 
 body {
   -webkit-box-shadow: 2px 3px 10px #333333;

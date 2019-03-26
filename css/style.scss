@@ -14,8 +14,14 @@ $white: #ffffff;
 html,
 body {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
+html {
+  @include respond-below(xs) {
+    font-size: 0.9em;
+  }
+}
 body {
   @include box-shadow(2px 3px 10px #333333);
   background-color: rgb(81, 45, 168);
