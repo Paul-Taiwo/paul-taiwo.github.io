@@ -58,12 +58,21 @@ main {
 
 .content {
   margin: 0 11vw;
+  @include respond-below(sm) {
+    margin: 0 5vw;
+  }
 }
 
 nav.navig {
   margin: 1.5em;
   padding: 15px 30px;
   height: 70px;
+  @include respond-below(xs) {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
   .title {
     float: left;
@@ -100,6 +109,7 @@ nav.navig {
   button.btn {
     display: none;
     background: transparent;
+    padding: 4px;
     @include respond-below(sm) {
       display: block;
       float: right;
@@ -113,14 +123,48 @@ nav.navig {
 
 }
 
+.side-nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #333;
+  z-index: 5;
+  width: 70%;
+  display: none;
+  @include respond-between(xs, md) {
+    width: 44%;
+  }
+  // @include respond-above(md) {
+  // }
+  ul {
+    list-style-type: none;
+    li {
+      a {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+}
+
 .intro {
   @include display(flex);
   margin: 54px 0px;
+
+  @include respond-below(xs) {
+    flex-direction: column;
+  }
 
   .img-contain {
     margin: 0 auto;
     width: 35%;
     z-index: 2;
+
+    @include respond-below(xs) {
+      width: 100%;
+    }
+
 
     img {
       display: block;
@@ -134,6 +178,9 @@ nav.navig {
   .short-intro {
     width: 65%;
     padding: 18px 0;
+    @include respond-below(xs) {
+      width: 100%;
+    }
   }
 }
 
