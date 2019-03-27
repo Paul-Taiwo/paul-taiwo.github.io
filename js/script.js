@@ -4,32 +4,42 @@
 // localStorage.previousBGColor = cc;
 
 let doc = document.documentElement,
-  body = document.querySelector('body'),
-  docBgColor,
-  colors = ['#6a1b9a', '#512da8', '#1565c0', '#ad1457', '#2e7d32'],
-  nav = document.querySelector('#link-contain');
+body = document.querySelector('body'),
+colors = ['#6a1b9a', '#512da8', '#1565c0', '#ad1457', '#2e7d32'],
+docBgColor;
 
 docBgColor = doc.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-if (docBgColor == '#6a1b9a') {
-  body.style.backgroundColor = '#804ca0';
-} else if (docBgColor == '#512da8') {
-  body.style.backgroundColor = '#5c6bc0';
-} else if (docBgColor == '#1565c0') {
-  body.style.backgroundColor = '#2085d6';
-} else if (docBgColor == '#ad1457') {
-  body.style.backgroundColor = '#dc2b78';
-} else if (docBgColor == '#2e7d32') {
-  body.style.backgroundColor = '#3da943';
+
+switch (true) {
+  case docBgColor == '#6a1b9a':
+    body.style.backgroundColor = '#804ca0';
+    break;
+  case docBgColor == '#512da8':
+    body.style.backgroundColor = '#5c6bc0';
+    break;
+  case docBgColor == '#1565c0':
+    body.style.backgroundColor = '#2085d6';
+    break;
+  case docBgColor == '#ad1457':
+    body.style.backgroundColor = '#dc2b78';
+    break;
+  case docBgColor == '#2e7d32':
+    body.style.backgroundColor = '#3da943';
+    break;
+  default:
+    break;
 }
 
 document.querySelector('#mobile-btn')
   .addEventListener('click', (e) => {
     e.preventDefault();
-    nav.classList.add('mobile-active');
+    document.querySelector('#link-contain')
+      .classList.add('mobile-active');
   });
 
 document.querySelector('.close-btn')
   .addEventListener('click', (e) => {
     e.preventDefault();
-    nav.classList.remove('mobile-active');
+    document.querySelector('#link-contain')
+      .classList.remove('mobile-active');
   });
