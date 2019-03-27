@@ -8,6 +8,7 @@ $white: #ffffff;
 * {
   margin: 0;
   padding: 0;
+  outline: none;
   @include box-sizing();
 }
 
@@ -44,7 +45,12 @@ a {
   bottom: 6%;
   // transform: translate(-50%, -50%);
   left: 5%;
-  z-index: 1;
+}
+
+.t-center {
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
 }
 
 .btn {
@@ -72,6 +78,7 @@ main {
   }
 }
 
+
 nav.navig {
   margin: 1.5em;
   padding: 15px 30px;
@@ -85,6 +92,7 @@ nav.navig {
 
   .title {
     float: left;
+    @include clearfloat();
 
     font: {
       family: 'Lobster Two', cursive;
@@ -100,10 +108,17 @@ nav.navig {
       position: fixed;
       top: 0;
       bottom: 0;
-      right: -366px;
+      right: 0;
       background: #333;
       z-index: 5;
       width: 70%;
+      text-align: center;
+      transform: translateX(360px);
+      @include transition(.5s ease-in);
+
+      &.mobile-active {
+        transform: translateX(0);
+      }
 
       @include respond-between(xs, md) {
         width: 44%;
@@ -112,8 +127,12 @@ nav.navig {
 
     li {
       @include display(inline-flex);
+
       @include respond-below(sm) {
         display: block;
+        &:nth-child(2) {
+          margin-top: 28px;
+        }
       }
 
       a {
@@ -124,14 +143,20 @@ nav.navig {
         &:hover {
           color: #fec758ff;
         }
+
+        @include respond-below(sm) {
+          display: block;
+          margin: 0;
+          padding: 10px;
+        }
       }
     }
   }
 
-  button.btn {
+  #mobile-btn {
     display: none;
-    background: transparent;
     padding: 4px;
+    background: transparent;
     @include respond-below(sm) {
       display: block;
       float: right;
@@ -145,28 +170,13 @@ nav.navig {
 
 }
 
-
-.side-nav {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: #333;
-  z-index: 5;
-  width: 70%;
+.close-btn {
   display: none;
-  @include respond-between(xs, md) {
-    width: 44%;
-  }
-  // @include respond-above(md) {
-  // }
-  ul {
-    list-style-type: none;
-    li {
-      a {
-        color: $white;
-      }
-    }
+  @include button-bg(red);
+  @include respond-below(sm) {
+    color: $white;
+    display: block;
+    float: right;
   }
 }
 
@@ -181,7 +191,7 @@ nav.navig {
   .img-contain {
     margin: 0 auto;
     width: 35%;
-    z-index: 2;
+    z-index: 1;
 
     @include respond-below(xs) {
       width: 100%;

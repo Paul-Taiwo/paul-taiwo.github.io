@@ -1,11 +1,7 @@
-.t-center {
-  text-align: center;
-  text-align: -webkit-center;
-  text-align: -moz-center; }
-
 * {
   margin: 0;
   padding: 0;
+  outline: none;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box; }
@@ -38,8 +34,12 @@ a {
   top: 10%;
   right: 48px;
   bottom: 6%;
-  left: 5%;
-  z-index: 1; }
+  left: 5%; }
+
+.t-center {
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center; }
 
 .btn {
   border: none;
@@ -81,6 +81,11 @@ nav.navig {
     float: left;
     font-family: 'Lobster Two', cursive;
     font-weight: 600; }
+    nav.navig .title::before, nav.navig .title::after {
+      content: "";
+      display: table; }
+    nav.navig .title::after {
+      clear: both; }
   nav.navig ul {
     float: right;
     list-style-type: none; }
@@ -89,10 +94,16 @@ nav.navig {
     position: fixed;
     top: 0;
     bottom: 0;
-    right: -366px;
+    right: 0;
     background: #333;
     z-index: 5;
-    width: 70%; } }
+    width: 70%;
+    text-align: center;
+    transform: translateX(360px);
+    -webkit-transition: 0.5s ease-in;
+    transition: 0.5s ease-in; }
+    nav.navig ul.mobile-active {
+      transform: translateX(0); } }
 
   @media only screen and (max-width: 768px) and (min-width: 576px) and (max-width: 992px) {
     nav.navig ul {
@@ -106,7 +117,9 @@ nav.navig {
       display: inline-flex; }
 @media only screen and (max-width: 768px) {
   nav.navig ul li {
-    display: block; } }
+    display: block; }
+    nav.navig ul li:nth-child(2) {
+      margin-top: 28px; } }
 
       nav.navig ul li a {
         margin: 0 20px;
@@ -115,35 +128,38 @@ nav.navig {
         color: #ffffff; }
         nav.navig ul li a:hover {
           color: #fec758ff; }
-  nav.navig button.btn {
-    display: none;
-    background: transparent;
-    padding: 4px; }
 @media only screen and (max-width: 768px) {
-  nav.navig button.btn {
+  nav.navig ul li a {
+    display: block;
+    margin: 0;
+    padding: 10px; } }
+
+  nav.navig #mobile-btn {
+    display: none;
+    padding: 4px;
+    background: transparent; }
+@media only screen and (max-width: 768px) {
+  nav.navig #mobile-btn {
     display: block;
     float: right; } }
 
-    nav.navig button.btn i.lnr {
+    nav.navig #mobile-btn i.lnr {
       font-size: x-large;
       color: #ffffff; }
 
-.side-nav {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: #333;
-  z-index: 5;
-  width: 70%;
-  display: none; }
-  @media (min-width: 576px) and (max-width: 992px) {
-    .side-nav {
-      width: 44%; } }
-  .side-nav ul {
-    list-style-type: none; }
-    .side-nav ul li a {
-      color: #ffffff; }
+.close-btn {
+  display: none;
+  color: #ffffff;
+  background-color: red; }
+  .close-btn:hover {
+    background-color: #d60000; }
+  .close-btn:active {
+    background-color: maroon; }
+@media only screen and (max-width: 768px) {
+  .close-btn {
+    color: #ffffff;
+    display: block;
+    float: right; } }
 
 .intro {
   display: -webkit-box;
@@ -159,7 +175,7 @@ nav.navig {
   .intro .img-contain {
     margin: 0 auto;
     width: 35%;
-    z-index: 2; }
+    z-index: 1; }
 @media only screen and (max-width: 576px) {
   .intro .img-contain {
     width: 100%; } }

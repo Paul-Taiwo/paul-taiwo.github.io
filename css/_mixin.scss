@@ -4,12 +4,6 @@
   -moz-box-sizing: border-box;
 }
 
-.t-center {
-  text-align: center;
-  text-align: -webkit-center;
-  text-align: -moz-center;
-}
-
 @mixin display($value) {
   @if $value==flex {
     display: -webkit-box;
@@ -105,12 +99,12 @@
 }
 
 @mixin clearfloat {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: "";
     display: table;
   }
-  &:after {
+  &::after {
     clear: both;
   }
 }

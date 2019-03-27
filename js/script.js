@@ -4,9 +4,10 @@
 // localStorage.previousBGColor = cc;
 
 let doc = document.documentElement,
-    body = document.querySelector('body'),
-    docBgColor,
-    colors = ['#6a1b9a', '#512da8', '#1565c0', '#ad1457', '#2e7d32'];
+  body = document.querySelector('body'),
+  docBgColor,
+  colors = ['#6a1b9a', '#512da8', '#1565c0', '#ad1457', '#2e7d32'],
+  nav = document.querySelector('#link-contain');
 
 docBgColor = doc.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 if (docBgColor == '#6a1b9a') {
@@ -20,3 +21,15 @@ if (docBgColor == '#6a1b9a') {
 } else if (docBgColor == '#2e7d32') {
   body.style.backgroundColor = '#3da943';
 }
+
+document.querySelector('#mobile-btn')
+  .addEventListener('click', (e) => {
+    e.preventDefault();
+    nav.classList.add('mobile-active');
+  });
+
+document.querySelector('.close-btn')
+  .addEventListener('click', (e) => {
+    e.preventDefault();
+    nav.classList.remove('mobile-active');
+  });
