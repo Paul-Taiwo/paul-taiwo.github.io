@@ -8,7 +8,7 @@ $white: #ffffff;
 * {
   margin: 0;
   padding: 0;
-  outline: none;
+  // outline: none;
   @include box-sizing();
 }
 
@@ -40,11 +40,10 @@ a {
 .particles {
   position: absolute;
   display: block;
-  top: 10%;
-  right: 48px;
-  bottom: 6%;
-  // transform: translate(-50%, -50%);
-  left: 5%;
+  top: -9%;
+  right: 18px;
+  bottom: 71%;
+  left: 1%;
 }
 
 .t-center {
@@ -69,6 +68,10 @@ a {
 
 main {
   margin-bottom: 50px;
+}
+
+.container {
+  position: relative;
 }
 
 .content {
@@ -183,6 +186,7 @@ nav.navig {
 .intro {
   @include display(flex);
   margin: 54px 0px;
+  position: relative;
 
   @include respond-below(xs) {
     flex-direction: column;
@@ -254,6 +258,7 @@ nav.navig {
     border-radius: 4px;
     margin: 0 10px 16px 0;
     color: #333 !important;
+    cursor: pointer;
     @include flex-grow();
     @include box-shadow(3px 5px 10px #333333f7);
 
