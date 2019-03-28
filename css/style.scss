@@ -44,6 +44,9 @@ a {
   right: 18px;
   bottom: 71%;
   left: 1%;
+  @include respond-below(sm) {
+    top:-5%;
+  }
 }
 
 .t-center {
@@ -151,6 +154,7 @@ nav.navig {
           display: block;
           margin: 0;
           padding: 10px;
+          font-size: x-large;
         }
       }
     }

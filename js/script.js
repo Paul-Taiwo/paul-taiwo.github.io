@@ -4,9 +4,9 @@
 // localStorage.previousBGColor = cc;
 
 let doc = document.documentElement,
-body = document.querySelector('body'),
-colors = ['#6a1b9a', '#512da8', '#1565c0', '#ad1457', '#2e7d32'],
-docBgColor;
+    body = document.querySelector('body'),
+    colors = ['#6a1b9a', '#512da8', '#1565c0', '#ad1457', '#2e7d32'],
+    docBgColor;
 
 docBgColor = doc.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 
