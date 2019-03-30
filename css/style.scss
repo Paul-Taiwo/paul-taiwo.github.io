@@ -35,6 +35,7 @@ body {
 
 a {
   text-decoration: none;
+  font-size: 18px;
 }
 
 .particles {
@@ -64,9 +65,13 @@ a {
   }
 }
 
-.btn-nonametogive {
+.link-github {
   @include button-bg(red);
   @include transition(all 0.4s ease);
+  svg {
+    vertical-align: text-top;
+    margin-right: 4px;
+  }
 }
 
 main {
@@ -252,6 +257,8 @@ nav.navig {
 }
 
 .work-list {
+  list-style-type: none;
+  margin-bottom: 10px;
   @include display(flex);
   @include justify-content();
   @include flex-wrap(wrap);

@@ -25,7 +25,8 @@ body {
   color: #ffffff; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  font-size: 18px; }
 
 .particles {
   position: absolute;
@@ -49,15 +50,18 @@ a {
   .btn a {
     color: #ffffff; }
 
-.btn-nonametogive {
+.link-github {
   color: #ffffff;
   background-color: red;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease; }
-  .btn-nonametogive:hover {
+  .link-github:hover {
     background-color: #d60000; }
-  .btn-nonametogive:active {
+  .link-github:active {
     background-color: maroon; }
+  .link-github svg {
+    vertical-align: text-top;
+    margin-right: 4px; }
 
 main {
   margin-bottom: 50px; }
@@ -218,6 +222,8 @@ nav.navig {
   margin-bottom: 50px; }
 
 .work-list {
+  list-style-type: none;
+  margin-bottom: 10px;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
